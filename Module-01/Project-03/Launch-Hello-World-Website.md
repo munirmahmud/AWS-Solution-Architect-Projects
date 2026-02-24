@@ -1,23 +1,4 @@
-# COM03-AWS100 — Launch a Hello World Website on the Internet
-
-> **Level:** 100 (Introductory)  
-> **Service Used:** Amazon EC2  
-> **Project Status:** ✅ Completed
-
-
-## 📋 Table of Contents
-
-- [Overview](#overview)
-- [Architecture](#architecture)
-- [Services Used](#services-used)
-- [Prerequisites](#prerequisites)
-- [Implementation Steps](#implementation-steps)
-- [Architecture Decision Record (ADR)](#architecture-decision-record-adr)
-- [Security Considerations](#security-considerations)
-- [Cost Analysis](#cost-analysis)
-- [Lessons Learned](#lessons-learned)
-- [What I'd Do Differently at Production Scale](#what-id-do-differently-at-production-scale)
-- [Cleanup](#cleanup)
+# Module-01 - Project 03: Launch a Hello World Website on the Internet
 
 ## Overview
 
