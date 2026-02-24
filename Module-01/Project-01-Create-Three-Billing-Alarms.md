@@ -4,8 +4,6 @@
 > 
 > *Your financial safety net — set this up before you build anything else in AWS.*
 
----
-
 ## 📐 Architecture Overview
 
 ```
@@ -16,7 +14,6 @@
 
 Three graduated alarms that email you when your AWS spend crosses a threshold. Simple to build, critical to have.
 
----
 
 ## 🚨 READ THIS BEFORE YOU START — Region Rules
 
@@ -32,7 +29,6 @@ ALL three services must be in **us-east-1 (N. Virginia)**:
 
 **If you create SNS in ap-southeast-1 (Singapore) and the alarm in us-east-1 — they cannot see each other and it will fail silently with no error message.**
 
----
 
 ## 🧭 Step-by-Step Guide
 
@@ -45,7 +41,6 @@ ALL three services must be in **us-east-1 (N. Virginia)**:
 
 > ⚠️ Without this step, billing metrics will **not appear** in CloudWatch at all. This is a one-time account-level setting.
 
----
 
 ### Step 2 — Switch to us-east-1
 
@@ -55,7 +50,6 @@ ALL three services must be in **us-east-1 (N. Virginia)**:
 
 > ⚠️ Billing metrics only exist in us-east-1. Any other region = no billing data visible in CloudWatch.
 
----
 
 ### Step 3 — Create SNS Topic & Subscription (in us-east-1)
 
@@ -70,7 +64,6 @@ ALL three services must be in **us-east-1 (N. Virginia)**:
 **Why SNS instead of emailing directly from CloudWatch?**
 CloudWatch alarms don't send emails — they *publish to SNS*, and SNS delivers to subscribers. This decoupling means one alarm can notify a team email, trigger a Lambda, send SMS, or all three at once. You're learning the universal AWS alerting pattern.
 
----
 
 ### Step 4 — Create Alarm 1: $10 Early Warning
 
@@ -84,7 +77,6 @@ CloudWatch alarms don't send emails — they *publish to SNS*, and SNS delivers 
 
 > ✅ The alarm will show **INSUFFICIENT_DATA** at first. This is **normal** — billing data updates once per day. It is not an error.
 
----
 
 ### Step 5 — Create Alarm 2: $30 Caution
 
@@ -92,7 +84,6 @@ Repeat Step 4 with only one change:
 - Value: `30`
 - Alarm name: `billing-alarm-30-usd`
 
----
 
 ### Step 6 — Create Alarm 3: $50 Take Action
 
@@ -102,7 +93,6 @@ Repeat Step 4 with only one change:
 
 > ✅ You should now see **3 alarms** in CloudWatch → Alarms. You're done!
 
----
 
 ## 💰 Cost Breakdown
 
@@ -113,8 +103,6 @@ Repeat Step 4 with only one change:
 | SNS Email (first 1,000/month free) | ✅ Yes | $0.00 |
 | **Total** | | **$0.00** |
 
----
-
 ## ⚠️ Common Mistakes
 
 | # | Mistake | Fix |
@@ -124,8 +112,6 @@ Repeat Step 4 with only one change:
 | 3 | SNS subscription not confirmed | Check email for the AWS confirmation link. Unconfirmed = silent failures. |
 | 4 | Alarm stuck on INSUFFICIENT_DATA | Normal. Billing data updates once per day. Wait 24 hours. |
 | 5 | Single alarm set too high (e.g. $500) | Use graduated thresholds for early warning, caution, and action signals. |
-
----
 
 ## 🔭 Solutions Architect Lens
 
