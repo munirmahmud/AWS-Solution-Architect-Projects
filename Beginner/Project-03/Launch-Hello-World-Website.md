@@ -1,4 +1,4 @@
-# Module-01 - Project 03: Launch a Hello World Website on the Internet
+# Beginner - Project 03: Launch a Hello World Website on the Internet
 
 ## Overview
 
