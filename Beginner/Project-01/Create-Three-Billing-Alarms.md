@@ -1,4 +1,4 @@
-# Module-01 - Project 01: Create Three Billing Alarms
+# Beginner - Project 01: Create Three Billing Alarms
 
 > **Service Used:** Amazon CloudWatch + Amazon SNS
 > 
