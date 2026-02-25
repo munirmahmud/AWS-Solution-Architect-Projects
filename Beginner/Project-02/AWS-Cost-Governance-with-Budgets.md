@@ -1,4 +1,4 @@
-# Module 01 — Project 02: AWS Cost Governance with Budgets
+# Beginner — Project 02: AWS Cost Governance with Budgets
 
 ## Project Summary
 
